@@ -1,5 +1,5 @@
 {% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% import  "bootstrap/wtf.html" as wtf %}
 
 {% block title %}Iris App{% endblock %}
 
@@ -37,6 +37,7 @@
                 </div>
                 <div class="col-md-4">
                     <img src="{{ url_for('static', filename=specie + '.jpg') }}" class="w-50 h-50 img-thumbnail" >
+                    <figcaption class="figure-caption">{{specie}}</figcaption>
                 </div>
             </div>
         </form>
