@@ -1,5 +1,5 @@
 import joblib
-import sys
+import os
 
 from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
@@ -32,6 +32,6 @@ def index():
     return render_template('index.html', form=form, specie=specie)
 
 def make_prediction(X):
-    filename = 'model/finalized_model.sav'
+    filename = os.path.join('model', 'finalized_model.sav')
     model = joblib.load(filename)
     return model.predict(X)[0]
